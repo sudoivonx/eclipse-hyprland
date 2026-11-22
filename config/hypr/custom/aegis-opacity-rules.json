@@ -1,0 +1,9 @@
+{
+  "blender": true,
+  "davinci": true,
+  "vlc": true,
+  "photo_viewers": true,
+  "games": true,
+  "media_content": true,
+  "fullscreen": true
+}

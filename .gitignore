@@ -1,0 +1,18 @@
+# Byte-compiled / cache artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editor / OS temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Runtime & restore backups
+*.before-*
+*.bak
+*.bak-*
+*.backup-*
+*.tmp
