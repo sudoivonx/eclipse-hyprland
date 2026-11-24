@@ -1019,7 +1019,7 @@ ApplicationWindow {
         preload: true
         onLoaded: {
             try {
-                const payload = JSON.parse(text);
+                const payload = JSON.parse(typeof text === "function" ? text() : text);
                 root.settingsCatalog = (payload.definitions || []).filter(setting => root.isVerifiedSetting(setting));
             } catch (error) {
                 root.nexusStatusText = Translation.tr("NEXUS settings catalogue could not be read.");
@@ -1038,6 +1038,8 @@ ApplicationWindow {
             try {
                 const response = JSON.parse(catalogStateOutput.text);
                 if (exitCode === 0 && (response.status === "ok" || response.schema === root.categoryTreeSchema || response.categoryTree)) {
+                    if (root.nexusStatusText === Translation.tr("NEXUS settings catalogue could not be read."))
+                        root.nexusStatusText = "";
                     root.acceptCatalogState(response);
                 } else {
                     root.nexusStatusText = (response && response.message) ? response.message : Translation.tr("NEXUS category tree is unavailable.");
@@ -1055,7 +1057,7 @@ ApplicationWindow {
         preload: true
         onLoaded: {
             try {
-                const payload = JSON.parse(text);
+                const payload = JSON.parse(typeof text === "function" ? text() : text);
                 root.initialValues = payload.values || {};
                 root.initialCursorValues = payload.externalValues && payload.externalValues.cursor ? payload.externalValues.cursor : {};
                 const customWindowRules = payload.externalValues ? payload.externalValues.customWindowRules : undefined;

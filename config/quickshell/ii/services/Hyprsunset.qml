@@ -21,7 +21,7 @@ Singleton {
     property string to: Config.options?.light?.night?.to ?? "06:30"
     property bool automatic: Config.options?.light?.night?.automatic && (Config?.ready ?? true)
     property int colorTemperature: Config.options?.light?.night?.colorTemperature ?? 5000
-    property int defaultColorTemperature: 6000
+    property int defaultColorTemperature: 6500
     property int gamma: 100
     property bool shouldBeOn
     property bool firstEvaluation: true
@@ -74,8 +74,14 @@ Singleton {
     onShouldBeOnChanged: ensureState()
     function ensureState() {
         // console.log("[Hyprsunset] Ensuring state:", root.shouldBeOn, "Automatic mode:", root.automatic);
-        if (!root.automatic || root.manualActive !== undefined)
+        if (root.manualActive !== undefined)
             return;
+        if (!root.automatic) {
+            root.disableTemperature();
+            if (root.gamma < 100)
+                root.setGamma(100);
+            return;
+        }
         if (root.shouldBeOn) {
             root.enableTemperature();
         } else {
@@ -84,7 +90,7 @@ Singleton {
     }
 
     function startHyprsunset() {
-        Quickshell.execDetached(["bash", "-c", `pidof hyprsunset || hyprsunset`]);
+        Quickshell.execDetached(["bash", "-c", `pidof hyprsunset || hyprsunset --identity`]);
     }
 
     function load() {
@@ -113,7 +119,7 @@ Singleton {
     function disableTemperature() {
         root.temperatureActive = false;
         // console.log("[Hyprsunset] Disabling");
-        Quickshell.execDetached(["bash", "-c", `hyprctl hyprsunset temperature ${root.defaultColorTemperature}`]);
+        Quickshell.execDetached(["bash", "-c", `hyprctl hyprsunset identity`]);
     }
 
     function setGamma(gamma) {

@@ -42,12 +42,12 @@ Singleton {
     }
 
     function decreaseBrightness(): void {
+        if (Hyprsunset.gamma < 100)
+            Hyprsunset.setGamma(100);
         const focusedName = Hyprland.focusedMonitor.name;
         const monitor = monitors.find(m => focusedName === m.screen.name);
-        if (monitor && monitor.brightness > 0)
+        if (monitor)
             monitor.setBrightness(monitor.brightness - 0.05);
-        else
-            Hyprsunset.setGamma(Math.max(0, Hyprsunset.gamma - 5));
     }
 
     reloadableId: "brightness"
@@ -152,9 +152,10 @@ Singleton {
         }
 
         function syncBrightness() {
+            if (!monitor.ready) return;
             const brightnessValue = Math.max(monitor.multipliedBrightness, 0);
             if (isDdc) {
-                const rawValueRounded = Math.max(Math.floor(brightnessValue * monitor.rawMaxBrightness), 1);
+                const rawValueRounded = Math.max(Math.round(brightnessValue * monitor.rawMaxBrightness), 1);
                 setProc.exec(["ddcutil", "-b", busNum, "setvcp", "10", String(rawValueRounded)]);
             } else {
                 const valuePercentNumber = Math.floor(brightnessValue * 100);
@@ -165,6 +166,8 @@ Singleton {
         }
 
         function setBrightness(value: real): void {
+            if (Hyprsunset.gamma < 100)
+                Hyprsunset.setGamma(100);
             value = Math.max(0, Math.min(1, value));
             monitor.brightness = value;
         }

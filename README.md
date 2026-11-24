@@ -6,11 +6,14 @@
 
 [![Hyprland](https://img.shields.io/badge/Hyprland-0.57%2B%20(Native%20Lua)-b82454?style=for-the-badge&logo=linux&logoColor=white)](https://hyprland.org/)
 [![Quickshell](https://img.shields.io/badge/Shell-Quickshell%20ii-d4bbff?style=for-the-badge)](https://quickshell.outfoxxed.me/)
+[![Base: end-4/dots-hyprland](https://img.shields.io/badge/Base-end--4%2Fdots--hyprland-ff6f91?style=for-the-badge&logo=github)](https://github.com/end-4/dots-hyprland)
 [![NEXUS God Menu](https://img.shields.io/badge/NEXUS-16%20Categories%20%E2%80%A2%20777%20Settings-7c4dff?style=for-the-badge)](#nexus-god-menu)
 [![Distros](https://img.shields.io/badge/Installer-Fedora%20%7C%20Arch%20%7C%20Ubuntu-26a69a?style=for-the-badge)](#-installation--kurulum)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5f5f7?style=for-the-badge)](./LICENSE)
 
-[**🇬🇧 English**](#-english-guide) • [**🇹🇷 Türkçe Rehber**](#-türkçe-rehber)
+> **Foundational Credit / Taban Proje:** Built upon the foundational architecture of [**end-4/dots-hyprland (`illogical-impulse`)**](https://github.com/end-4/dots-hyprland) and extensively re-engineered with the **NEXUS God Menu** (automatic 6-layer Category Engine & 69+ live Hyprland compositor controls), 6-pass Acrylic glass blur, native inner neon glow, and zero-stutter `OutCubic` floating island animations.
+
+[**🇬🇧 English**](#-english-guide) • [**🇹🇷 Türkçe Rehber**](#-türkçe-rehber) • [**🙏 Credits / Teşekkür**](#-credits--attribution--taban-proje-ve-teşekkür)
 
 ![Eclipse Hyprland Banner](assets/screenshots/banner-wallpaper.png)
 
@@ -20,7 +23,7 @@
 
 ## 📸 Showcase Gallery / Ekran Görüntüleri
 
-| Desktop & Acrylic Overview | NEXUS God Menu (16 Dynamic Categories) |
+| Keybindings Cheatsheet & Acrylic Desktop | NEXUS God Menu (16 Dynamic Categories) |
 | :---: | :---: |
 | ![Desktop Overview](assets/screenshots/desktop-overview.png) | ![NEXUS God Menu](assets/screenshots/nexus-god-menu.png) |
 
@@ -204,6 +207,13 @@ Derived directly from `config/hypr/hyprland/keybinds.lua` and `config/hypr/custo
 
 ---
 
+## 🙏 Credits & Attribution / Taban Proje ve Teşekkür
+
+- **🇬🇧 Base Project & Upstream Inspiration:** This setup was originally built using [**end-4/dots-hyprland (`illogical-impulse`)**](https://github.com/end-4/dots-hyprland) as its foundation. While the visual identity, floating island top bar, 6-pass Acrylic blur + native inner glow shaders, smoothed `OutCubic` motion architecture, and the **NEXUS God Menu** (automatic 6-layer Category Engine with 777 verified settings and atomic undo/reset) have transformed it into a completely distinct desktop experience, huge thanks go to [@end-4](https://github.com/end-4) and all `dots-hyprland` contributors for the upstream Quickshell foundation.
+- **🇹🇷 Taban Proje ve Teşekkür:** Bu yapılandırma, temel mimari olarak [**end-4/dots-hyprland (`illogical-impulse`)**](https://github.com/end-4/dots-hyprland) taban alınarak geliştirilmiştir. Görsel tasarım, yüzen ada (floating island) üst barı, 6 geçişli Akrilik cam + neon iç parlama (glow) katmanı, pürüzsüz `OutCubic` animasyon motoru ve **NEXUS God Menu** (777 doğrulanmış ayarlı tam otomatik kategori motoru) ile bambaşka bir masaüstü deneyimine dönüştürülmüş olsa da, sunduğu sağlam Quickshell temeli için [@end-4](https://github.com/end-4) ve tüm `dots-hyprland` katkıcılarına teşekkürler.
+
+---
+
 ## 📄 License / Lisans
 
-Released under the [MIT License](./LICENSE). Crafted for the Hyprland & Quickshell community by [@sudoivonx](https://github.com/sudoivonx).
+Released under the [MIT License](./LICENSE). Crafted for the Hyprland & Quickshell community by [@sudoivonx](https://github.com/sudoivonx), based on the upstream foundation of [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland).

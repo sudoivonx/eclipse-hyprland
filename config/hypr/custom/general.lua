@@ -24,7 +24,7 @@ hl.config({
     decoration = {
         inactive_opacity = 0.80,
         dim_inactive = true,
-        dim_strength = 0.35,
+        dim_strength = 0.05,
     },
 })
 -- AEGIS WINDOW EFFECTS END
@@ -86,13 +86,13 @@ hl.config({
 hl.config({
     decoration = {
         blur = {
-            xray = false,
+            xray = true,
             popups = true,
             popups_ignorealpha = 0.4,
             vibrancy = 0.65,
-            vibrancy_darkness = 0.60,
-            contrast = 0.94,
-            brightness = 1.02,
+            vibrancy_darkness = 0.15,
+            contrast = 0.98,
+            brightness = 1.05,
             noise = 0.035,
             acrylic = {
                 refraction = 28,
